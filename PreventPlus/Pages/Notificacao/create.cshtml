@@ -1,0 +1,34 @@
+﻿@page
+@model PreventPlus.Pages.Notificacao.CreateModel
+@{
+    ViewData["Title"] = "Criar Notificação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Notificacao.TituloNotificacao"></label>
+        <input asp-for="Notificacao.TituloNotificacao" class="form-control" />
+        <span asp-validation-for="Notificacao.TituloNotificacao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notificacao.DescNotificacao"></label>
+        <textarea asp-for="Notificacao.DescNotificacao" class="form-control"></textarea>
+        <span asp-validation-for="Notificacao.DescNotificacao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Notificacao.EnvioNotificacao"></label>
+        <input asp-for="Notificacao.EnvioNotificacao" class="form-control" type="date" />
+        <span asp-validation-for="Notificacao.EnvioNotificacao" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

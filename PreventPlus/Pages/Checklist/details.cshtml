@@ -1,0 +1,22 @@
+﻿@page
+@model PreventPlus.Pages.Checklists.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes do Checklist";
+}
+
+<h2>Detalhes do Checklist</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Checklist.TituloChecklist</dd>
+
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Checklist.DescricaoChecklist</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-page="Edit" asp-route-id="@Model.Checklist.IdChecklist" class="btn btn-warning">Editar</a>
+    <a asp-page="Index" class="btn btn-secondary">Voltar</a>
+</p>

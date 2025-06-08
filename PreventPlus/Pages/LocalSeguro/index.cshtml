@@ -1,0 +1,37 @@
+﻿@page
+@model PreventPlus.Pages.LocaisSeguros.IndexModel
+@{
+    ViewData["Title"] = "Lista de Locais Seguros";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Novo Local Seguro</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Tipo</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var local in Model.LocaisSeguros)
+    {
+        <tr>
+            <td>@local.NomeLocal</td>
+            <td>@local.EnderecoLocal</td>
+            <td>@local.TipoLocal</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@local.IdLocal" class="btn btn-primary btn-sm">Editar</a>
+                <a asp-page="Details" asp-route-id="@local.IdLocal" class="btn btn-info btn-sm">Detalhes</a>
+                <a asp-page="Delete" asp-route-id="@local.IdLocal" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

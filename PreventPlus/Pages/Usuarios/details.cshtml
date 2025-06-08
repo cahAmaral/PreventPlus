@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model PreventPlus.Pages.Usuarios.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+}
+
+<h2>Detalhes do Usuário</h2>
+
+<div>
+    <h4>Usuário</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.Usuario.IdUsuario</dd>
+
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Usuario.NomeUsuario</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Usuario.EmailUsuario</dd>
+
+        <dt class="col-sm-2">Tipo</dt>
+        <dd class="col-sm-10">@Model.Usuario.TipoUsuario</dd>
+
+        <dt class="col-sm-2">Data de Criação</dt>
+        <dd class="col-sm-10">@Model.Usuario.UsuarioCriado.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-2">Região ID</dt>
+        <dd class="col-sm-10">@Model.Usuario.IdRegiao</dd>
+    </dl>
+</div>
+
+<a asp-page="Edit" asp-route-id="@Model.Usuario.IdUsuario" class="btn btn-primary">Editar</a>
+<a asp-page="Index" class="btn btn-secondary">Voltar</a>

@@ -1,0 +1,35 @@
+﻿@page
+@model PreventPlus.Pages.Checklists.IndexModel
+@{
+    ViewData["Title"] = "Lista de Checklists";
+}
+
+<h2>Lista de Checklists</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Novo Checklist</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var checklist in Model.Checklists)
+    {
+        <tr>
+            <td>@checklist.TituloChecklist</td>
+            <td>@checklist.DescricaoChecklist</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@checklist.IdChecklist" class="btn btn-info btn-sm">Detalhes</a>
+                <a asp-page="Edit" asp-route-id="@checklist.IdChecklist" class="btn btn-warning btn-sm">Editar</a>
+                <a asp-page="Delete" asp-route-id="@checklist.IdChecklist" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

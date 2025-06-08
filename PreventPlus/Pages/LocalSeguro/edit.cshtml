@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model PreventPlus.Pages.LocaisSeguros.EditModel
+@{
+    ViewData["Title"] = "Editar Local Seguro";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="LocalSeguro.IdLocal" />
+    <div class="form-group">
+        <label asp-for="LocalSeguro.NomeLocal"></label>
+        <input asp-for="LocalSeguro.NomeLocal" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LocalSeguro.EnderecoLocal"></label>
+        <input asp-for="LocalSeguro.EnderecoLocal" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LocalSeguro.TipoLocal"></label>
+        <input asp-for="LocalSeguro.TipoLocal" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Voltar</a>
+</form>

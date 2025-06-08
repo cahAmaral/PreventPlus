@@ -1,0 +1,25 @@
+﻿@page
+@model PreventPlus.Pages.Regiao.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes da Região";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Região</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Regiao.IdRegiao</dd>
+
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Regiao.NomeRegiao</dd>
+
+        <dt class="col-sm-2">Descrição</dt>
+        <dd class="col-sm-10">@Model.Regiao.EstadoRegiao</dd>
+    </dl>
+</div>
+
+<a asp-page="Index" class="btn btn-secondary">Voltar</a>
+<a asp-page="Edit" asp-route-id="@Model.Regiao.IdRegiao" class="btn btn-primary">Editar</a>

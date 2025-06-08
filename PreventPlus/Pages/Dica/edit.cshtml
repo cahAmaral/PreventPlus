@@ -1,0 +1,34 @@
+﻿@page
+@model PreventPlus.Pages.Dicas.CreateModel
+@{
+    ViewData["Title"] = "Cadastrar Dica";
+}
+
+<h2>Cadastrar Dica</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Dica.TituloDica"></label>
+        <input asp-for="Dica.TituloDica" class="form-control" />
+        <span asp-validation-for="Dica.TituloDica" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dica.ConteudoDica"></label>
+        <textarea asp-for="Dica.ConteudoDica" class="form-control"></textarea>
+        <span asp-validation-for="Dica.ConteudoDica" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dica.IdDesastre"></label>
+        <select asp-for="Dica.IdDesastre" asp-items="Model.TipoDesastreOptions" class="form-control"></select>
+        <span asp-validation-for="Dica.IdDesastre" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

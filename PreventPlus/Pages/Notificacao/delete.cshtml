@@ -1,0 +1,33 @@
+﻿@page
+@model PreventPlus.Pages.Notificacao.DeleteModel
+@{
+    ViewData["Title"] = "Excluir Notificação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Tem certeza que deseja excluir esta notificação?</h3>
+
+<div>
+    <h4>Notificação</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Notificacao.IdNotificacao</dd>
+
+        <dt class="col-sm-2">Título</dt>
+        <dd class="col-sm-10">@Model.Notificacao.TituloNotificacao</dd>
+
+        <dt class="col-sm-2">Mensagem</dt>
+        <dd class="col-sm-10">@Model.Notificacao.DescNotificacao</dd>
+
+        <dt class="col-sm-2">Data</dt>
+        <dd class="col-sm-10">@Model.Notificacao.EnvioNotificacao.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Notificacao.IdNotificacao" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,19 @@
+﻿@page
+@model PreventPlus.Pages.Kit.CreateModel
+@{
+    ViewData["Title"] = "Cadastrar Kit";
+}
+
+<h2>Cadastrar Kit</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Kit.IdKit"></label>
+        <input asp-for="Kit.IdKit" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Kit.ItemKit"></label>
+        <textarea asp-for="Kit.ItemKit" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+</form>

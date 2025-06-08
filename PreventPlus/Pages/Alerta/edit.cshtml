@@ -1,0 +1,36 @@
+﻿@page
+@model PreventPlus.Pages.Alertas.EditModel
+@{
+    ViewData["Title"] = "Editar Alerta";
+}
+
+<h2>Editar Alerta</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Alerta.IdAlerta" />
+
+    <div class="form-group">
+        <label asp-for="Alerta.IdAlerta"></label>
+        <textarea asp-for="Alerta.IdAlerta" class="form-control"></textarea>
+        <span asp-validation-for="Alerta.IdAlerta" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Alerta.DataCriacao"></label>
+        <input asp-for="Alerta.DataCriacao" type="date" class="form-control" />
+        <span asp-validation-for="Alerta.DataCriacao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Alerta.IdAlerta"></label>
+        <select asp-for="Alerta.IdAlerta" asp-items="Model.RegiaoOptions" class="form-control"></select>
+        <span asp-validation-for="Alerta.IdAlerta" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

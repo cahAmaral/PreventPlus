@@ -1,0 +1,43 @@
+﻿@page
+@model PreventPlus.Pages.HistoricosRisco.IndexModel
+@{
+    ViewData["Title"] = "Históricos de Risco";
+}
+
+<h2>Históricos de Risco</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Cadastrar Novo</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Chuva</th>
+        <th>Umidade</th>
+        <th>Temperatura</th>
+        <th>Alerta</th>
+        <th>Impacto</th>
+        <th>Região</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Historicos)
+    {
+        <tr>
+            <td>@item.HistChuva</td>
+            <td>@item.HistUmidade</td>
+            <td>@item.HistTemp</td>
+            <td>@item.HistAlerta</td>
+            <td>@item.HistImpacto</td>
+            <td>@item.IdRegiao</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.IdHistorico">Editar</a> |
+                <a asp-page="Details" asp-route-id="@item.IdHistorico">Detalhes</a> |
+                <a asp-page="Delete" asp-route-id="@item.IdHistorico">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

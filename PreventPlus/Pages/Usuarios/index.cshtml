@@ -1,0 +1,41 @@
+﻿@page
+@model PreventPlus.Pages.Usuarios.IndexModel
+@{
+    ViewData["Title"] = "Lista de Usuários";
+}
+
+<h2>Usuários</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Cadastrar Novo Usuário</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Tipo</th>
+        <th>Data de Criação</th>
+        <th>Região</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var usuario in Model.Usuarios)
+    {
+        <tr>
+            <td>@usuario.NomeUsuario</td>
+            <td>@usuario.EmailUsuario</td>
+            <td>@usuario.TipoUsuario</td>
+            <td>@usuario.UsuarioCriado.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@usuario.IdRegiao</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@usuario.IdUsuario">Editar</a> |
+                <a asp-page="Details" asp-route-id="@usuario.IdUsuario">Detalhes</a> |
+                <a asp-page="Delete" asp-route-id="@usuario.IdUsuario">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

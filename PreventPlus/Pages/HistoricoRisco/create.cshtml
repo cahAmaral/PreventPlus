@@ -1,0 +1,36 @@
+﻿@page
+@model PreventPlus.Pages.HistoricosRisco.CreateModel
+@{
+    ViewData["Title"] = "Cadastrar Histórico de Risco";
+}
+
+<h2>Cadastrar Histórico de Risco</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.HistChuva"></label>
+        <input asp-for="HistoricoRisco.HistChuva" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.HistUmidade"></label>
+        <input asp-for="HistoricoRisco.HistUmidade" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.HistTemp"></label>
+        <input asp-for="HistoricoRisco.HistTemp" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.HistAlerta"></label>
+        <input asp-for="HistoricoRisco.HistAlerta" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.HistImpacto"></label>
+        <input asp-for="HistoricoRisco.HistImpacto" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HistoricoRisco.IdRegiao"></label>
+        <input asp-for="HistoricoRisco.IdRegiao" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+</form>

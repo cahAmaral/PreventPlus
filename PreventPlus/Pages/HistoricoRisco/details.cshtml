@@ -1,0 +1,36 @@
+﻿@page
+@model PreventPlus.Pages.HistoricosRisco.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes do Histórico de Risco";
+}
+
+<h2>Detalhes do Histórico de Risco</h2>
+
+<div>
+    <h4>Histórico</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Chuva</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.HistChuva</dd>
+
+        <dt class="col-sm-2">Umidade</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.HistUmidade</dd>
+
+        <dt class="col-sm-2">Temperatura</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.HistTemp</dd>
+
+        <dt class="col-sm-2">Alerta</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.HistAlerta</dd>
+
+        <dt class="col-sm-2">Impacto</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.HistImpacto</dd>
+
+        <dt class="col-sm-2">Região</dt>
+        <dd class="col-sm-10">@Model.HistoricoRisco.IdRegiao</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-page="Edit" asp-route-id="@Model.HistoricoRisco.IdHistorico">Editar</a> |
+    <a asp-page="Index">Voltar</a>
+</p>

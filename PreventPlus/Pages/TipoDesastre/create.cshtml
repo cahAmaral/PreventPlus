@@ -1,0 +1,26 @@
+﻿@page
+@model PreventPlus.Pages.TipoDesastre.CreateModel
+@{
+    ViewData["Title"] = "Cadastrar Tipo de Desastre";
+}
+
+<h2>Cadastrar Tipo de Desastre</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="TipoDesastre.Descricao"></label>
+        <input asp-for="TipoDesastre.Descricao" class="form-control" />
+        <span asp-validation-for="TipoDesastre.Descricao" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TipoDesastre.Descricao"></label>
+        <textarea asp-for="TipoDesastre.Descricao" class="form-control"></textarea>
+        <span asp-validation-for="TipoDesastre.Descricao" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

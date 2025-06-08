@@ -1,0 +1,27 @@
+﻿@page
+@model PreventPlus.Pages.Checklists.CreateModel
+@{
+    ViewData["Title"] = "Cadastrar Checklist";
+}
+
+<h2>Cadastrar Checklist</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Checklist.TituloChecklist"></label>
+        <input asp-for="Checklist.TituloChecklist" class="form-control" />
+        <span asp-validation-for="Checklist.TituloChecklist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Checklist.DescricaoChecklist"></label>
+        <textarea asp-for="Checklist.DescricaoChecklist" class="form-control"></textarea>
+        <span asp-validation-for="Checklist.DescricaoChecklist" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

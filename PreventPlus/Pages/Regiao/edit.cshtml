@@ -1,0 +1,30 @@
+﻿@page
+@model PreventPlus.Pages.Regiao.EditModel
+@{
+    ViewData["Title"] = "Editar Região";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Regiao.IdRegiao" />
+
+    <div class="form-group">
+        <label asp-for="Regiao.NomeRegiao"></label>
+        <input asp-for="Regiao.NomeRegiao" class="form-control" />
+        <span asp-validation-for="Regiao.NomeRegiao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Regiao.EstadoRegiao"></label>
+        <textarea asp-for="Regiao.EstadoRegiao" class="form-control"></textarea>
+        <span asp-validation-for="Regiao.EstadoRegiao" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

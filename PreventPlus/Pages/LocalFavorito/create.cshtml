@@ -1,0 +1,19 @@
+﻿@page
+@model PreventPlus.Pages.LocalFavorito.CreateModel
+@{
+    ViewData["Title"] = "Adicionar Local Favorito";
+}
+
+<h2>Adicionar Local Favorito</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="LocalFavorito.IdUsuario"></label>
+        <input asp-for="LocalFavorito.IdUsuario" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LocalFavorito.IdLocal"></label>
+        <input asp-for="LocalFavorito.IdLocal" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+</form>

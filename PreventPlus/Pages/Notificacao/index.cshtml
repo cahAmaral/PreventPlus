@@ -1,0 +1,36 @@
+﻿@page
+@model PreventPlus.Pages.Notificacao.IndexModel
+@{
+    ViewData["Title"] = "Lista de Notificações";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Mensagem</th>
+        <th>Data</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var notificacao in Model.Notificacoes)
+    {
+        <tr>
+            <td>@notificacao.IdNotificacao</td>
+            <td>@notificacao.TituloNotificacao</td>
+            <td>@notificacao.EnvioNotificacao</td>
+            <td>@notificacao.EnvioNotificacao.ToString("dd/MM/yyyy")</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@notificacao.IdNotificacao">Detalhes</a> |
+                <a asp-page="Edit" asp-route-id="@notificacao.IdNotificacao">Editar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-page="Create" class="btn btn-primary">Nova Notificação</a>

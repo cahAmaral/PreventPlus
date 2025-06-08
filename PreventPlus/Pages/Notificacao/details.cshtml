@@ -1,0 +1,28 @@
+﻿@page
+@model PreventPlus.Pages.Notificacao.DetailsModel
+@{
+    ViewData["Title"] = "Detalhes da Notificação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Notificação</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Id</dt>
+        <dd class="col-sm-10">@Model.Notificacao.IdNotificacao</dd>
+
+        <dt class="col-sm-2">Título</dt>
+        <dd class="col-sm-10">@Model.Notificacao.TituloNotificacao</dd>
+
+        <dt class="col-sm-2">Mensagem</dt>
+        <dd class="col-sm-10">@Model.Notificacao.DescNotificacao</dd>
+
+        <dt class="col-sm-2">Data</dt>
+        <dd class="col-sm-10">@Model.Notificacao.EnvioNotificacao.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>
+
+<a asp-page="Index" class="btn btn-secondary">Voltar</a>
+<a asp-page="Edit" asp-route-id="@Model.Notificacao.IdNotificacao" class="btn btn-primary">Editar</a>

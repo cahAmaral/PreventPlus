@@ -1,0 +1,34 @@
+﻿@page
+@model PreventPlus.Pages.Regiao.IndexModel
+@{
+    ViewData["Title"] = "Lista de Regiões";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var regiao in Model.Regioes)
+    {
+        <tr>
+            <td>@regiao.IdRegiao</td>
+            <td>@regiao.NomeRegiao</td>
+            <td>@regiao.EstadoRegiao</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@regiao.IdRegiao">Detalhes</a> |
+                <a asp-page="Edit" asp-route-id="@regiao.IdRegiao">Editar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-page="Create" class="btn btn-primary">Nova Região</a>

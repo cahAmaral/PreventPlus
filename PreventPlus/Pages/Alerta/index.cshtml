@@ -1,0 +1,37 @@
+﻿@page
+@model PreventPlus.Pages.Alertas.IndexModel
+@{
+    ViewData["Title"] = "Lista de Alertas";
+}
+
+<h2>Lista de Alertas</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Novo Alerta</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Mensagem</th>
+        <th>Data</th>
+        <th>Região</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var alerta in Model.Alertas)
+    {
+        <tr>
+            <td>@alerta.IdAlerta</td>
+            <td>@alerta.DataCriacao.ToString("dd/MM/yyyy")</td>
+            <td>@alerta.Descricao.</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@alerta.IdAlerta" class="btn btn-info btn-sm">Detalhes</a>
+                <a asp-page="Edit" asp-route-id="@alerta.IdAlerta" class="btn btn-warning btn-sm">Editar</a>
+                <a asp-page="Delete" asp-route-id="@alerta.IdAlerta" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model PreventPlus.Pages.LocalFavorito.DeleteModel
+@{
+    ViewData["Title"] = "Excluir Local Favorito";
+}
+
+<h2>Tem certeza que deseja excluir?</h2>
+
+<div>
+    <h4>Local Favorito</h4>
+    <div>
+        <strong>ID:</strong> @Model.LocalFavorito.IdFav
+    </div>
+    <div>
+        <strong>ID Usuário:</strong> @Model.LocalFavorito.IdUsuario
+    </div>
+    <div>
+        <strong>ID Local:</strong> @Model.LocalFavorito.IdLocal
+    </div>
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger mt-2">Confirmar Exclusão</button>
+    <a asp-page="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>

@@ -1,0 +1,37 @@
+﻿@page
+@model PreventPlus.Pages.Dicas.IndexModel
+@{
+    ViewData["Title"] = "Lista de Dicas";
+}
+
+<h2>Lista de Dicas</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Nova Dica</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Tipo de Desastre</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var dica in Model.Dicas)
+    {
+        <tr>
+            <td>@dica.TituloDica</td>
+            <td>@dica.ConteudoDica</td>
+            <td>@dica.TipoDesastre?.IdDesastre</td>
+            <td>
+                <a asp-page="Details" asp-route-id="@dica.IdDica" class="btn btn-info btn-sm">Detalhes</a>
+                <a asp-page="Edit" asp-route-id="@dica.IdDica" class="btn btn-warning btn-sm">Editar</a>
+                <a asp-page="Delete" asp-route-id="@dica.IdDica" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
