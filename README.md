@@ -1,146 +1,82 @@
-## Prevent+ - Aplicativo de Prevenção e Educação para Desastres Naturais
+ Prevent+ – Aplicativo de Prevenção e Educação para Desastres Naturais
 
-(adicione seu logo aqui, se tiver)
+## 📌 Descrição
+Projeto desenvolvido com .NET 8 utilizando Razor Pages, API RESTful, banco de dados SQLite, Swagger e boas práticas de arquitetura. O sistema permite o gerenciamento de usuários, alertas, regiões, desastres, dicas, checklists, entre outros, promovendo a conscientização e resposta rápida em casos de desastres naturais.
 
-Índice
-Descrição do Projeto
+---
 
-Arquitetura e Diagramas
+## 📁 Repositório
+**GitHub:** [https://github.com/cahAmaral/PreventPlus](https://github.com/cahAmaral/PreventPlus)
 
-Desenvolvimento
+---
 
-Testes
+## 🧩 Estrutura do Projeto
+- API RESTful com .NET 9
+- Razor Pages com TagHelpers
+- SQLite como banco de dados
+- Swagger para documentação
+- Boas práticas de arquitetura (camadas: Models, DTOs, Controllers, Services)
 
-Como Executar
+---
 
-Exemplos de Testes com Swagger e Postman
+## 📊 Diagrama da Solução
 
-Vídeos
+![Diagrama](docs/diagrama.png)
 
-Contato
+---
 
-## Descrição do Projeto
-Prevent+ é um sistema desenvolvido em .NET Core para auxiliar na prevenção e educação sobre desastres naturais. A aplicação oferece funcionalidades para gerenciamento de alertas, dicas, checklists, notificações e usuários, visando aumentar a conscientização e a preparação da população.
+## 🔧 Tecnologias Utilizadas
+- ASP.NET Core 8
+- SQLite
+- Entity Framework Core
+- Swagger
+- Razor Pages com TagHelpers
 
-Arquitetura e Diagramas
-Diagrama de Entidades (Modelo ER)
+---
 
-(adicione aqui o diagrama de entidades que mostra as tabelas e relacionamentos)
+## 🚀 Como Executar
 
-Diagrama de Classes (Backend)
-
-(diagrama com as classes principais do projeto, por exemplo: Usuario, Alerta, Dica, etc)
-
-Fluxo da Aplicação
-
-(fluxo das chamadas entre front-end (Razor Pages) e API RESTful)
-
-Desenvolvimento
-Tecnologias: ASP.NET Core, Entity Framework Core, Oracle Database, Swagger, Razor Pages
-
-Estrutura:
-
-Models: definição das entidades e relacionamentos
-
-DTOs: objetos de transferência para comunicação API
-
-Controllers: pontos de acesso REST para os recursos
-
-Services: regras de negócio e acesso ao banco
-
-Views: interface Razor Pages para interação com o usuário
-
-Boas práticas: injeção de dependência, validação via Data Annotations, uso de DTOs para segurança e desacoplamento.
-
-Testes
-Testes manuais com Swagger UI para endpoints REST.
-
-Testes com Postman para diferentes cenários de CRUD.
-
-Validação de dados via FluentValidation / Data Annotations.
-
-Testes unitários (se implementados) com xUnit ou NUnit (adicione aqui se tiver).
-
-Logs e tratamento de exceções configurados para facilitar a depuração.
-
-## Como Executar
-Pré-requisitos
-.NET 7 SDK ou superior
-
-Oracle Database (com o script de criação do schema rodado)
-
-Rider, Visual Studio 2022 ou VSCode
-
-Docker (opcional, se usar container)
-
-Git
-
-Passos para rodar localmente
-Clone o repositório:
-
-bash
-Copiar
-Editar
-git clone https://github.com/seuusuario/preventplus.git
-cd preventplus
-Configure a string de conexão no appsettings.json:
-
-json
-Copiar
-Editar
-"ConnectionStrings": {
-  "OracleConnection": "User Id=usuario;Password=senha;Data Source=localhost:1521/xe;"
-}
-Restaure os pacotes:
-
-bash
-Copiar
-Editar
+1. Clone o repositório:
+```bash
+git clone https://github.com/cahAmaral/PreventPlus.git
+```
+2. Restaure os pacotes:
+```bash
 dotnet restore
-Rode as migrations (se aplicável) para criar o banco:
-
-bash
-Copiar
-Editar
+```
+3. Execute as migrations:
+```bash
 dotnet ef database update
-Execute a aplicação:
+```
+4. Rode o projeto:
+```bash
+dotnet run
+```
+5. Acesse via navegador:
+```
+http://localhost:5006/swagger
+```
 
-bash
-Copiar
-Editar
-dotnet run --project PreventPlus.API
-Acesse o Swagger para testes:
+---
 
-bash
-Copiar
-Editar
-http://localhost:5006/swagger/index.html
-Exemplos de Testes com Swagger e Postman
-Criar Usuário (POST /api/usuarios)
-json
-Copiar
-Editar
-{
-  "nomeUsuario": "Carolzinha",
-  "emailUsuario": "carol@example.com",
-  "senhaUsuario": "senha123",
-  "tipoUsuario": "Admin",
-  "usuarioCriado": "2025-06-08T10:00:00",
-  "idRegiao": 1,
-  "checklists": [],
-  "dicas": [],
-  "kits": [],
-  "notificacoes": [],
-  "locaisFavoritos": []
-}
-Atualizar Alerta (PUT /api/alertas/{id})
-json
-Copiar
-Editar
-{
-  "idAlerta": 1,
-  "titulo": "Alerta de Enchente",
-  "descricao": "Possibilidade de enchentes nas próximas 24 horas",
-  "usuarioId": 2,
-  "tipoDesastreId": 3
-}
+## 🧪 Exemplos de Teste via Swagger
+
+### Testar Regiões (POST /api/regioes)
+**JSON de exemplo:**
+```json
+[
+  {
+    "idRegiao": 1,
+    "nomeRegiao": "Região Metropolitana",
+    "estadoRegiao": "SP",
+    "usuarios": null,
+    "historicosRisco": null
+  },
+  {
+    "idRegiao": 2,
+    "nomeRegiao": "Litoral Norte",
+    "estadoRegiao": "SP",
+    "usuarios": null,
+    "historicosRisco": null
+  }
+]
